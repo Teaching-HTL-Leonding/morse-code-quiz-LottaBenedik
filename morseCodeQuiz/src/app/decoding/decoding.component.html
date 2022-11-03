@@ -1,0 +1,18 @@
+<h1>Decoder</h1>
+<form #f="ngForm">
+  <div>
+    <label>Message to decode:
+      <input type="text" id="messageToDecode" name="messageToDecode"(ngModelChange)="isValid()"
+      [(ngModel)]="messageToDecode" required #messageToDecodeInput="ngModel" />
+    </label>
+  </div>
+  <div>
+    <label>Decoded Message:
+      <input type="text" id="decodedMessage" name="decodedMessage"
+      [ngModel]="decodedMessage" readonly/>
+    </label>
+  </div>
+</form>
+
+<button type="button" [disabled]="!isValid()" (click)="decodingProcess()">Save</button>
+

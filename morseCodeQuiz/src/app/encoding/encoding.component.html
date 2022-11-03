@@ -1,0 +1,20 @@
+<h1>Encoder</h1>
+<form #f="ngForm">
+  <div>
+    <label>Message to encode:
+      <input type="text" id="messageToEncodeInput" name="messageToEncode" (ngModelChange)="isValid()"
+      [(ngModel)]="messageToEncode" required
+      #messageToEncodeInput="ngModel" />
+    </label>
+  </div>
+  <div>
+    <label>Encoded Message:
+      <input type="text" id="encodedMessage" name="encodedMessage"
+      [ngModel]="encodedMessage" readonly/>
+    </label>
+  </div>
+
+
+</form>
+
+<button type="button" [disabled]="!isValid()" (click)="encodingProcess()">Save</button>
